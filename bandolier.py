@@ -15,6 +15,7 @@ class MyWidget(QtWidgets.QWidget):
         self.layout.addWidget(self.button)
         self.button.clicked.connect(self.magic)
         self.setWindowTitle('Bandolier')
+        print("here we are")
 
     @QtCore.Slot()
     def magic(self):
