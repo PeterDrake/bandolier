@@ -12,8 +12,14 @@ class MyWidget(QtWidgets.QWidget):
         #                              alignment=QtCore.Qt.AlignCenter)
         self.layout = QtWidgets.QVBoxLayout(self)
         for i in range(4):
-            t = QtWidgets.QPlainTextEdit(f'Line {i}')  #labels for each line
-            self.layout.addWidget(t)
+            row = QtWidgets.QGroupBox()
+            layout = QtWidgets.QHBoxLayout(self)
+            button = QtWidgets.QPushButton(f'Copy {i}')
+            text = QtWidgets.QPlainTextEdit(f'Line {i}')  #labels for each line
+            layout.addWidget(button)
+            layout.addWidget(text)
+            row.setLayout(layout)
+            self.layout.addWidget(row)
         # self.layout.addWidget(self.text)
         # self.layout.addWidget(self.button)
         # self.button.clicked.connect(self.magic)
