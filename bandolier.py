@@ -24,12 +24,13 @@ class MyWidget(QtWidgets.QWidget):
             self.layout.addWidget(row)
         # self.layout.addWidget(self.text)
         # self.layout.addWidget(self.button)
-        # self.button.clicked.connect(self.magic)
+            button.clicked.connect(self.magic)
         self.setWindowTitle('Bandolier')
 
     @QtCore.Slot()
     def magic(self):
-        self.text.setText(random.choice(self.hello))    #no longer needed
+        #self.text.setText(random.choice(self.hello))    #no longer needed
+        print("Hey, I've been clicked")
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
