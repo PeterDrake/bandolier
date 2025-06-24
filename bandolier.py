@@ -22,7 +22,7 @@ class MyWidget(QtWidgets.QWidget):
 
     @staticmethod
     def make_command(text):
-        return lambda : text.setPlainText(text.toPlainText() + 'x')
+        return lambda : text.setPlainText(text.toPlainText() + 'x') #print to row text box
 
     # # @QtCore.Slot()
     # def magic(self):
