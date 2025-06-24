@@ -13,7 +13,7 @@ class MyWidget(QtWidgets.QWidget):
         self.layout = QtWidgets.QVBoxLayout(self)
         for i in range(4):
             row = QtWidgets.QGroupBox() #outer containing box for each row
-            layout = QtWidgets.QHBoxLayout(self)
+            layout = QtWidgets.QHBoxLayout(row)
             button = QtWidgets.QPushButton(f'Copy {i}')
             #button.sizePolicy().setVerticalPolicy(QtWidgets.QSizePolicy.Policy.Expanding)
             button.setSizePolicy(QtWidgets.QSizePolicy.Policy.Maximum, QtWidgets.QSizePolicy.Policy.Expanding)
