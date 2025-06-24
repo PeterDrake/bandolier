@@ -12,9 +12,11 @@ class MyWidget(QtWidgets.QWidget):
         #                              alignment=QtCore.Qt.AlignCenter)
         self.layout = QtWidgets.QVBoxLayout(self)
         for i in range(4):
-            row = QtWidgets.QGroupBox()
+            row = QtWidgets.QGroupBox() #outer containing box for each row
             layout = QtWidgets.QHBoxLayout(self)
             button = QtWidgets.QPushButton(f'Copy {i}')
+            #button.sizePolicy().setVerticalPolicy(QtWidgets.QSizePolicy.Policy.Expanding)
+            button.setSizePolicy(QtWidgets.QSizePolicy.Policy.Maximum, QtWidgets.QSizePolicy.Policy.Expanding)
             text = QtWidgets.QPlainTextEdit(f'Line {i}')  #labels for each line
             layout.addWidget(button)
             layout.addWidget(text)
