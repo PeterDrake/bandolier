@@ -6,16 +6,18 @@ from PySide6 import QtCore, QtWidgets
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
-        self.hello = ["Hallo Welt", "Hei maailma", "Hola Mundo", "Привет мир"]
-        self.button = QtWidgets.QPushButton("Click me!")
-        self.text = QtWidgets.QLabel("Hello World",
-                                     alignment=QtCore.Qt.AlignCenter)
+        # self.hello = ["Hallo Welt", "Hei maailma", "Hola Mundo", "Привет мир"]
+        # self.button = QtWidgets.QPushButton("Click me!")
+        # self.text = QtWidgets.QLabel("Hello World",
+        #                              alignment=QtCore.Qt.AlignCenter)
         self.layout = QtWidgets.QVBoxLayout(self)
-        self.layout.addWidget(self.text)
-        self.layout.addWidget(self.button)
-        self.button.clicked.connect(self.magic)
+        for i in range(4):
+            t = QtWidgets.QLabel(f'Line {i}', alignment=QtCore.Qt.AlignCenter)
+            self.layout.addWidget(t)
+        # self.layout.addWidget(self.text)
+        # self.layout.addWidget(self.button)
+        # self.button.clicked.connect(self.magic)
         self.setWindowTitle('Bandolier')
-        print("here we are")
 
     @QtCore.Slot()
     def magic(self):
