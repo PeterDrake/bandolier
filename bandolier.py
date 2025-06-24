@@ -12,7 +12,7 @@ class MyWidget(QtWidgets.QWidget):
         #                              alignment=QtCore.Qt.AlignCenter)
         self.layout = QtWidgets.QVBoxLayout(self)
         for i in range(4):
-            t = QtWidgets.QLabel(f'Line {i}', alignment=QtCore.Qt.AlignCenter)
+            t = QtWidgets.QPlainTextEdit(f'Line {i}')  #labels for each line
             self.layout.addWidget(t)
         # self.layout.addWidget(self.text)
         # self.layout.addWidget(self.button)
@@ -21,7 +21,7 @@ class MyWidget(QtWidgets.QWidget):
 
     @QtCore.Slot()
     def magic(self):
-        self.text.setText(random.choice(self.hello))
+        self.text.setText(random.choice(self.hello))    #no longer needed
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
