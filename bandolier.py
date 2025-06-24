@@ -8,12 +8,12 @@ class MyWidget(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
         self.layout = QtWidgets.QVBoxLayout(self)
-        for i in range(4):
+        for i in range(6):
             row = QtWidgets.QGroupBox() #outer containing box for each row
             layout = QtWidgets.QHBoxLayout(row)
-            button = QtWidgets.QPushButton(f'Copy {i}')
+            button = QtWidgets.QPushButton(f'CopyR')
             button.setSizePolicy(QtWidgets.QSizePolicy.Policy.Maximum, QtWidgets.QSizePolicy.Policy.Expanding)
-            text = QtWidgets.QPlainTextEdit(f'')  #labels for each line
+            text = QtWidgets.QTextEdit(f'')  #labels for each line
             layout.addWidget(button)
             layout.addWidget(text)
             row.setLayout(layout)
@@ -23,18 +23,12 @@ class MyWidget(QtWidgets.QWidget):
 
     @staticmethod
     def make_command(text):
-        #return lambda : text.setPlainText(text.toPlainText() + 'x') #print to row text box
         return lambda : pyperclip.copy(text.toPlainText())
 
-    # # @QtCore.Slot()
-    # def magic(self):
-    #     print("Hey, I've been clicked")
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
-
     widget = MyWidget()
     widget.resize(800, 600)
     widget.show()
-
     sys.exit(app.exec())
