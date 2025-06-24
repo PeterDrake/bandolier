@@ -2,6 +2,7 @@
 import sys
 import random
 from PySide6 import QtCore, QtWidgets
+import pyperclip
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
@@ -22,7 +23,8 @@ class MyWidget(QtWidgets.QWidget):
 
     @staticmethod
     def make_command(text):
-        return lambda : text.setPlainText(text.toPlainText() + 'x') #print to row text box
+        #return lambda : text.setPlainText(text.toPlainText() + 'x') #print to row text box
+        return lambda : pyperclip.copy(text.toPlainText())
 
     # # @QtCore.Slot()
     # def magic(self):
